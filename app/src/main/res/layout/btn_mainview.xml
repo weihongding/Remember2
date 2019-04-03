@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btn_rc"
+            android:text="日 程"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:textColor="#09554E"
+            android:background="@drawable/btn_rc"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="8dp"/>
+
+        <Button
+            android:id="@+id/btn_bwl"
+            android:text="备忘录"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:textColor="#116A10"
+            android:background="@drawable/btn_bwl"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="8dp"/>
+
+        <Button
+            android:id="@+id/btn_jl"
+            android:text="记 录"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:textColor="#66102D"
+            android:background="@drawable/btn_jl"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="8dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btn_tq"
+            android:text="天 气"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:textColor="#550923"
+            android:background="@drawable/btn_tq"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="8dp"/>
+
+        <Button
+            android:id="@+id/btn_dt"
+            android:text="地 图"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:textColor="#031CA6"
+            android:background="@drawable/btn_dt"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="8dp"/>
+
+        <Button
+            android:id="@+id/btn_sb"
+            android:text="设 备"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:textColor="#0D5E56"
+            android:background="@drawable/btn_sb"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="8dp"/>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_login"
+        android:text="登      陆"
+        android:textSize="23dp"
+        android:textStyle="bold"
+        android:textColor="#063B05"
+        android:background="@drawable/btn_login"
+        android:layout_width="210dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="40dp" />
+
+</LinearLayout>
