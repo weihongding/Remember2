@@ -11,16 +11,20 @@
         android:layout_marginTop="10dp">
         <Button
             android:id="@+id/btn_share"
+            android:text="@string/fa_share"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
             android:layout_margin="40dp"
-            />
+            android:background="@null"/>
         <Button
             android:id="@+id/btn_set"
+            android:text="@string/fa_cog"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="40dp"
-            android:layout_alignParentRight="true"/>
+            android:layout_alignParentRight="true"
+            android:background="@null"/>
     </RelativeLayout>
 
     <LinearLayout

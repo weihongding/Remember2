@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Remember</string>
+    <string name="fa_car">&#xf1b9;</string>
+    <string name="fa_apple">&#xf179;</string>
+    <string name="fa_android">&#xf17b;</string>
+    <string name="fa_cog">&#xf013;</string>
+    <string name="fa_share">&#xf064;</string>
 </resources>
