@@ -6,7 +6,12 @@ import android.widget.Toast;
 
 import com.example.remember.R;
 import com.example.remember.Util.MyApplication;
+import com.example.remember.activity.BwlActivity;
 import com.example.remember.activity.DtActivity;
+import com.example.remember.activity.JlActivity;
+import com.example.remember.activity.RcActivity;
+import com.example.remember.activity.SbActivity;
+import com.example.remember.activity.TqActivity;
 
 
 public class MaBtnListener implements View.OnClickListener {
@@ -25,19 +30,27 @@ public class MaBtnListener implements View.OnClickListener {
                 break;
             }
             case R.id.btn_rc:{
-                Toast.makeText(MyApplication.getContext(),"点击了日程", Toast.LENGTH_SHORT).show();
+                intent = new Intent(MyApplication.getContext(), RcActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK );//添加一个flag
+                MyApplication.getContext().startActivity(intent);
                 break;
             }
             case R.id.btn_bwl:{
-                Toast.makeText(MyApplication.getContext(),"点击了备忘录", Toast.LENGTH_SHORT).show();
+                intent = new Intent(MyApplication.getContext(), BwlActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK );//添加一个flag
+                MyApplication.getContext().startActivity(intent);
                 break;
             }
             case R.id.btn_jl:{
-                Toast.makeText(MyApplication.getContext(),"点击了记录", Toast.LENGTH_SHORT).show();
+                intent = new Intent(MyApplication.getContext(), JlActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK );//添加一个flag
+                MyApplication.getContext().startActivity(intent);
                 break;
             }
             case R.id.btn_tq:{
-                Toast.makeText(MyApplication.getContext(),"点击了天气", Toast.LENGTH_SHORT).show();
+                intent = new Intent(MyApplication.getContext(), TqActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK );//添加一个flag
+                MyApplication.getContext().startActivity(intent);
                 break;
             }
             case R.id.btn_dt:{
@@ -47,7 +60,9 @@ public class MaBtnListener implements View.OnClickListener {
                 break;
             }
             case R.id.btn_sb:{
-                Toast.makeText(MyApplication.getContext(),"点击了设备", Toast.LENGTH_SHORT).show();
+                intent = new Intent(MyApplication.getContext(), SbActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK );//添加一个flag
+                MyApplication.getContext().startActivity(intent);
                 break;
             }
             case R.id.btn_login:{
