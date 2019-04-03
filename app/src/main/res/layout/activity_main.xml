@@ -65,6 +65,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
+        <TextView
+            android:id="@+id/text_user"
+            android:textSize="23dp"
+            android:textStyle="bold"
+            android:textColor="#063B05"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            />
+
         <Button
             android:id="@+id/btn_login"
             android:text="登      陆"
@@ -73,7 +83,8 @@
             android:textColor="#063B05"
             android:background="@drawable/btn_login"
             android:layout_width="210dp"
-            android:layout_height="50dp"/>
+            android:layout_height="50dp"
+            />
 
     </LinearLayout>
 

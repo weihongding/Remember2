@@ -3,8 +3,13 @@ package com.example.remember.activity;
 import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
+
 import com.example.remember.R;
+import com.example.remember.Util.CheckUtil;
+import com.example.remember.Util.UserSetting;
 import com.example.remember.listener.MaBtnListener;
 
 public class MainActivity extends AppCompatActivity {
@@ -22,19 +27,24 @@ public class MainActivity extends AppCompatActivity {
         Button btn_dt = (Button)findViewById(R.id.btn_dt);
         Button btn_sb = (Button)findViewById(R.id.btn_sb);
         Button btn_login = (Button)findViewById(R.id.btn_login);
+        TextView tv_user = (TextView)findViewById(R.id.text_user);
         Typeface font = Typeface.createFromAsset(getAssets(), "fonts/fontawesome-webfont.ttf");
 
         btn_share.setTypeface(font);
         btn_set.setTypeface(font);
-        btn_share.setOnClickListener(new MaBtnListener());
-        btn_set.setOnClickListener(new MaBtnListener());
-        btn_rc.setOnClickListener(new MaBtnListener());
-        btn_bwl.setOnClickListener(new MaBtnListener());
-        btn_jl.setOnClickListener(new MaBtnListener());
-        btn_tq.setOnClickListener(new MaBtnListener());
-        btn_dt.setOnClickListener(new MaBtnListener());
-        btn_sb.setOnClickListener(new MaBtnListener());
-        btn_login.setOnClickListener(new MaBtnListener());
+        MaBtnListener listener = new MaBtnListener(this);
+
+        btn_share.setOnClickListener(listener);
+        btn_set.setOnClickListener(listener);
+        btn_rc.setOnClickListener(listener);
+        btn_bwl.setOnClickListener(listener);
+        btn_jl.setOnClickListener(listener);
+        btn_tq.setOnClickListener(listener);
+        btn_dt.setOnClickListener(listener);
+        btn_sb.setOnClickListener(listener);
+        btn_login.setOnClickListener(listener);
+
+        CheckUtil.setUserLoginState(this);
 
     }
 }

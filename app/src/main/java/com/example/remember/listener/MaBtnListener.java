@@ -1,11 +1,15 @@
 package com.example.remember.listener;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.remember.R;
+import com.example.remember.Util.CheckUtil;
 import com.example.remember.Util.MyApplication;
+import com.example.remember.Util.UserSetting;
 import com.example.remember.activity.BwlActivity;
 import com.example.remember.activity.DtActivity;
 import com.example.remember.activity.JlActivity;
@@ -17,6 +21,11 @@ import com.example.remember.activity.TqActivity;
 public class MaBtnListener implements View.OnClickListener {
 
     Intent intent;
+    protected Activity mActivity;
+
+    public MaBtnListener(Activity activity){
+        mActivity = activity;
+    }
 
     @Override
     public void onClick(View v) {
@@ -26,7 +35,8 @@ public class MaBtnListener implements View.OnClickListener {
                 break;
             }
             case R.id.btn_set:{
-                Toast.makeText(MyApplication.getContext(),"点击了设置", Toast.LENGTH_SHORT).show();
+                UserSetting.UserName="undefinedUser";
+                CheckUtil.setUserLoginState(mActivity);
                 break;
             }
             case R.id.btn_rc:{
@@ -66,7 +76,8 @@ public class MaBtnListener implements View.OnClickListener {
                 break;
             }
             case R.id.btn_login:{
-                Toast.makeText(MyApplication.getContext(),"点击了登陆", Toast.LENGTH_SHORT).show();
+                UserSetting.UserName="牧威";
+                CheckUtil.setUserLoginState(mActivity);
                 break;
             }
         }
