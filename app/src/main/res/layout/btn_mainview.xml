@@ -84,16 +84,4 @@
 
     </LinearLayout>
 
-    <Button
-        android:id="@+id/btn_login"
-        android:text="登      陆"
-        android:textSize="23dp"
-        android:textStyle="bold"
-        android:textColor="#063B05"
-        android:background="@drawable/btn_login"
-        android:layout_width="210dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginLeft="40dp" />
-
 </LinearLayout>
