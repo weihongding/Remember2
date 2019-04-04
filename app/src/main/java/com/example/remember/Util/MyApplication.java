@@ -3,6 +3,7 @@ package com.example.remember.Util;
 import android.app.Application;
 import android.content.Context;
 
+//全局中获取当前context
 public class MyApplication extends Application {
 
     private static Context context;

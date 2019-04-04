@@ -3,6 +3,7 @@ package com.example.remember.Util;
 import android.content.Context;
 import android.graphics.Typeface;
 
+//设置font
 public class FontManager {
 
 
