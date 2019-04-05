@@ -4,6 +4,9 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class UserSetting {
 
     private static SharedPreferences.Editor editor;
@@ -17,16 +20,23 @@ public class UserSetting {
     public static String UserLocation_district="undefineDistrict";//区
     public static String UserLocation_street="undefineStreet";//街道
 
-    public static void setUserLoginInfo(Activity activity,String userName){
-         editor = activity.getSharedPreferences("data", Context.MODE_PRIVATE).edit();
-         editor.putString("userName",userName);
+    //存入自动登陆信息
+    public static void setUserLoginInfo(Activity activity,String account,String password){
+         editor = activity.getSharedPreferences("UserInfo", Context.MODE_PRIVATE).edit();
+         editor.putString("account",account);
+         editor.putString("password",password);
          editor.apply();
     }
 
-    public static String getUserLoginInfo(Activity activity){
-        pref = activity.getSharedPreferences("data",Context.MODE_PRIVATE);
-        String name = pref.getString("userName","undefined");
-        return name;
+    //获取自动登录信息
+    public static Map<String,String> getUserLoginInfo(Activity activity){
+        pref = activity.getSharedPreferences("UserInfo",Context.MODE_PRIVATE);
+        Map<String,String> map = new HashMap<>();
+        String account = pref.getString("account","");
+        String password = pref.getString("password","");
+        map.put("account",account);
+        map.put("password",password);
+        return map;
     }
 
 }

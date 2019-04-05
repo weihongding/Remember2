@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
         Button btn_dt = (Button)findViewById(R.id.btn_dt);
         Button btn_sb = (Button)findViewById(R.id.btn_sb);
         Button btn_login = (Button)findViewById(R.id.btn_login);
+
         TextView tv_user = (TextView)findViewById(R.id.text_user);
         Typeface font = Typeface.createFromAsset(getAssets(), "fonts/fontawesome-webfont.ttf");
 

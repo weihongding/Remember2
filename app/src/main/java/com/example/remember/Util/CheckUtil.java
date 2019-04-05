@@ -8,6 +8,8 @@ import android.widget.Toast;
 
 import com.example.remember.R;
 
+import java.util.Map;
+
 //检查数据
 public class CheckUtil {
 
@@ -15,12 +17,13 @@ public class CheckUtil {
     public static void setUserLoginState(Activity activity){
         Button btn_login = (Button)activity.findViewById(R.id.btn_login);
         TextView tv_user = (TextView)activity.findViewById(R.id.text_user);
-        if(UserSetting.getUserLoginInfo(activity).equals("undefined")){
+        if(UserSetting.getUserLoginInfo(activity).get("account").equals("")||UserSetting.getUserLoginInfo(activity).get("account")==null){
             btn_login.setVisibility(View.VISIBLE);
             tv_user.setVisibility(View.GONE);
         }else{
             btn_login.setVisibility(View.GONE);
-            tv_user.setText("用户："+UserSetting.getUserLoginInfo(activity));
+            Map map = UserSetting.getUserLoginInfo(activity);
+            tv_user.setText("账号："+map.get("account")+"\n密码："+map.get("password"));
             tv_user.setVisibility(View.VISIBLE);
         }
     }
