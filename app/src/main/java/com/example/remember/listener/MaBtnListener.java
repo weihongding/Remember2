@@ -25,9 +25,7 @@ import java.util.Map;
 
 public class MaBtnListener implements View.OnClickListener {
 
-    protected Intent intent;
-    protected Activity mActivity;
-    protected MyDialog mMyDialog;
+    private Activity mActivity;
 
     public MaBtnListener(Activity activity){
         mActivity = activity;
@@ -36,7 +34,7 @@ public class MaBtnListener implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         switch (v.getId()){
-            case R.id.btn_share:{
+            case R.id.btn_mail:{
                 Toast.makeText(MyApplication.getContext(),"点击了分享", Toast.LENGTH_SHORT).show();
                 break;
             }
@@ -46,66 +44,63 @@ public class MaBtnListener implements View.OnClickListener {
                 break;
             }
             case R.id.btn_rc:{
-                intent = new Intent(MyApplication.getContext(), RcActivity.class);
+                Intent intent = new Intent(MyApplication.getContext(), RcActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK );//添加一个flag
                 MyApplication.getContext().startActivity(intent);
                 break;
             }
             case R.id.btn_bwl:{
-                intent = new Intent(MyApplication.getContext(), BwlActivity.class);
+                Intent intent = new Intent(MyApplication.getContext(), BwlActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK );//添加一个flag
                 MyApplication.getContext().startActivity(intent);
                 break;
             }
             case R.id.btn_jl:{
-                intent = new Intent(MyApplication.getContext(), JlActivity.class);
+                Intent intent = new Intent(MyApplication.getContext(), JlActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK );//添加一个flag
                 MyApplication.getContext().startActivity(intent);
                 break;
             }
             case R.id.btn_tq:{
-                intent = new Intent(MyApplication.getContext(), TqActivity.class);
+                Intent intent = new Intent(MyApplication.getContext(), TqActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK );//添加一个flag
                 MyApplication.getContext().startActivity(intent);
                 break;
             }
             case R.id.btn_dt:{
-                intent = new Intent(MyApplication.getContext(), DtActivity.class);
+                Intent intent = new Intent(MyApplication.getContext(), DtActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK );//添加一个flag
                 MyApplication.getContext().startActivity(intent);
                 break;
             }
             case R.id.btn_sb:{
-                intent = new Intent(MyApplication.getContext(), SbActivity.class);
+                Intent intent = new Intent(MyApplication.getContext(), SbActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK );//添加一个flag
                 MyApplication.getContext().startActivity(intent);
                 break;
             }
             case R.id.btn_login:{
-                View view = mActivity.getLayoutInflater().inflate(R.layout.dialog_layout, null);
-                mMyDialog = new MyDialog(mActivity, view, R.style.DialogTheme);
-                mMyDialog.setCancelable(true);
-                mMyDialog.show();
-                EditText edi_account = (EditText)mMyDialog.findViewById(R.id.edit_login_account);
-                EditText edi_password = (EditText)mMyDialog.findViewById(R.id.edit_login_password);
-                Button btn_login_q = (Button)mMyDialog.findViewById(R.id.btn_login_q);
-                Button btn_reg = (Button)mMyDialog.findViewById(R.id.btn_reg);
-                Map<String,String> map = UserSetting.getUserLoginInfo(mActivity);
+                MyDialog.loginDialog.show();
+                Button btn_login_q = (Button)MyDialog.loginDialog.findViewById(R.id.btn_login_q);
+                Button btn_reg = (Button)MyDialog.loginDialog.findViewById(R.id.btn_reg);
                 btn_login_q.setOnClickListener(this);
                 btn_reg.setOnClickListener(this);
-                edi_account.setText(map.get("account")==null?"":map.get("account"));
-                edi_password.setText(map.get("password")==null?"":map.get("password"));
                 break;
             }
             case R.id.btn_reg:{
-                Toast.makeText(MyApplication.getContext(),"点击了注册", Toast.LENGTH_SHORT).show();
+                MyDialog.loginDialog.hide();
+                MyDialog.regDialog.show();
+                Button btn_reg_back = (Button)MyDialog.regDialog.findViewById(R.id.btn_reg_back);
+                Button btn_reg_q = (Button)MyDialog.regDialog.findViewById(R.id.btn_reg_q);
+                btn_reg_back.setOnClickListener(this);
+                btn_reg_q.setOnClickListener(this);
                 break;
             }
             case R.id.btn_login_q:{
-                mMyDialog.cancel();
-                EditText edi_account = (EditText)mMyDialog.findViewById(R.id.edit_login_account);
-                EditText edi_password = (EditText)mMyDialog.findViewById(R.id.edit_login_password);
-                CheckBox cb_login_save = (CheckBox)mMyDialog.findViewById(R.id.cb_login_save);
+                MyDialog.loginDialog.cancel();
+                EditText edi_account = (EditText)MyDialog.loginDialog.findViewById(R.id.edit_login_account);
+                EditText edi_password = (EditText)MyDialog.loginDialog.findViewById(R.id.edit_login_password);
+                CheckBox cb_login_save = (CheckBox)MyDialog.loginDialog.findViewById(R.id.cb_login_save);
                 UserSetting.setUserLoginInfo(mActivity, edi_account.getText().toString(), edi_password.getText().toString());
                 Map<String,String> map = UserSetting.getUserLoginInfo(mActivity);
                 Toast.makeText(mActivity,map.get("account"), Toast.LENGTH_SHORT).show();
@@ -113,6 +108,30 @@ public class MaBtnListener implements View.OnClickListener {
                 if(!cb_login_save.isChecked()) {
                     UserSetting.setUserLoginInfo(mActivity, "", "");
                 }
+                edi_account.setText("");
+                edi_password.setText("");
+                cb_login_save.setChecked(false);
+                break;
+            }
+            case R.id.btn_reg_back:{
+                MyDialog.regDialog.hide();
+                MyDialog.loginDialog.show();
+                break;
+            }
+            case R.id.btn_reg_q:{
+                MyDialog.regDialog.cancel();
+                MyDialog.loginDialog.show();
+                EditText edi_name = (EditText)MyDialog.regDialog.findViewById(R.id.edit_reg_name);
+                EditText edi_account = (EditText)MyDialog.regDialog.findViewById(R.id.edit_reg_account);
+                EditText edi_password = (EditText)MyDialog.regDialog.findViewById(R.id.edit_reg_password);
+                EditText edi_password2 = (EditText)MyDialog.regDialog.findViewById(R.id.edit_reg_password2);
+                String user = edi_name.getText().toString()+"\n"+edi_account.getText().toString()+"\n"
+                        +edi_password.getText().toString()+"\n"+edi_password2.getText().toString();
+                Toast.makeText(mActivity, user, Toast.LENGTH_SHORT).show();
+                edi_name.setText("");
+                edi_account.setText("");
+                edi_password.setText("");
+                edi_password2.setText("");
                 break;
             }
 

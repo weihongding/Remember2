@@ -9,9 +9,10 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_marginTop="10dp">
+
         <Button
-            android:id="@+id/btn_share"
-            android:text="@string/fa_share"
+            android:id="@+id/btn_mail"
+            android:text="@string/fa_mail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"

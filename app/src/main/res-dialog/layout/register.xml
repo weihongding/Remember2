@@ -2,11 +2,11 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:background="#00FFFFFF" >
+    android:background="@null" >
 
     <RelativeLayout
         android:layout_width="280dp"
-        android:layout_height="220dp"
+        android:layout_height="300dp"
         android:background="@drawable/dialog_bg"
         android:orientation="vertical">
 
@@ -19,12 +19,13 @@
             >
 
             <TextView
-                android:text="账号："
+                android:text="昵称："
                 android:textSize="18dp"
-                android:layout_width="wrap_content"
+                android:gravity="right"
+                android:layout_width="90dp"
                 android:layout_height="wrap_content" />
             <EditText
-                android:id="@+id/edit_login_account"
+                android:id="@+id/edit_reg_name"
                 android:textSize="18dp"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
@@ -41,12 +42,60 @@
             >
 
             <TextView
-                android:text="密码："
+                android:text="账号："
                 android:textSize="18dp"
-                android:layout_width="wrap_content"
+                android:gravity="right"
+                android:layout_width="90dp"
                 android:layout_height="wrap_content" />
             <EditText
-                android:id="@+id/edit_login_password"
+                android:id="@+id/edit_reg_account"
+                android:textSize="18dp"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:lines="1"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="120dp"
+            android:layout_centerHorizontal="true"
+            >
+
+            <TextView
+                android:text="密码："
+                android:textSize="18dp"
+                android:gravity="right"
+                android:layout_width="90dp"
+                android:layout_height="wrap_content" />
+            <EditText
+                android:id="@+id/edit_reg_password"
+                android:textSize="18dp"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:password="true"
+                android:lines="1"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="170dp"
+            android:layout_centerHorizontal="true"
+            >
+
+            <TextView
+                android:text="密码确认："
+                android:textSize="18dp"
+                android:gravity="right"
+                android:layout_width="90dp"
+                android:layout_height="wrap_content" />
+            <EditText
+                android:id="@+id/edit_reg_password2"
                 android:textSize="18dp"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
@@ -63,12 +112,6 @@
             android:layout_centerHorizontal="true"
             >
 
-            <CheckBox
-                android:id="@+id/cb_login_save"
-                android:text="自动登录"
-                android:textSize="18dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
 
         </LinearLayout>
 
@@ -91,8 +134,8 @@
                 android:layout_height="wrap_content">
 
                 <Button
-                    android:id="@+id/btn_reg"
-                    android:text="注册"
+                    android:id="@+id/btn_reg_back"
+                    android:text="返回"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
@@ -104,8 +147,8 @@
                     android:background="#c0c0c0"/>
 
                 <Button
-                    android:id="@+id/btn_login_q"
-                    android:text="登陆"
+                    android:id="@+id/btn_reg_q"
+                    android:text="注册"
                     android:layout_width="0dp"
                     android:layout_weight="2"
                     android:layout_height="wrap_content"
