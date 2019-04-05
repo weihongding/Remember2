@@ -35,27 +35,28 @@ public class MyLocationListener implements BDLocationListener {
         mActivity.runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                StringBuilder currentPosition = new StringBuilder();
-                currentPosition.append("纬度：").append(location.getLatitude()).append("\n");
-                currentPosition.append("经线：").append(location.getLongitude()).append("\n");
                 UserSetting.UserLocation_country=location.getCountry();
                 UserSetting.UserLocation_province=location.getProvince();
                 UserSetting.UserLocation_city=location.getCity();
                 UserSetting.UserLocation_district=location.getDistrict();
                 UserSetting.UserLocation_street=location.getStreet();
-                currentPosition.append("国家：").append(UserSetting.UserLocation_country).append("\n");
-                currentPosition.append("省：").append(UserSetting.UserLocation_province).append("\n");
-                currentPosition.append("市：").append(UserSetting.UserLocation_city).append("\n");
-                currentPosition.append("区：").append(UserSetting.UserLocation_district).append("\n");
-                currentPosition.append("街道：").append(UserSetting.UserLocation_street).append("\n");
-                currentPosition.append("定位方式：");
-                if (location.getLocType() == BDLocation.TypeGpsLocation){
-                    currentPosition.append("GPS");
-                }else if(location.getLocType()==BDLocation.TypeNetWorkLocation){
-                    currentPosition.append("网络");
-                }
-                TextView positionText = (TextView)mActivity.findViewById(R.id.text_position);
-                positionText.setText(currentPosition);
+//                地图数据显示
+//                StringBuilder currentPosition = new StringBuilder();
+//                currentPosition.append("纬度：").append(location.getLatitude()).append("\n");
+//                currentPosition.append("经线：").append(location.getLongitude()).append("\n");
+//                currentPosition.append("国家：").append(UserSetting.UserLocation_country).append("\n");
+//                currentPosition.append("省：").append(UserSetting.UserLocation_province).append("\n");
+//                currentPosition.append("市：").append(UserSetting.UserLocation_city).append("\n");
+//                currentPosition.append("区：").append(UserSetting.UserLocation_district).append("\n");
+//                currentPosition.append("街道：").append(UserSetting.UserLocation_street).append("\n");
+//                currentPosition.append("定位方式：");
+//                if (location.getLocType() == BDLocation.TypeGpsLocation){
+//                    currentPosition.append("GPS");
+//                }else if(location.getLocType()==BDLocation.TypeNetWorkLocation){
+//                    currentPosition.append("网络");
+//                }
+//                TextView positionText = (TextView)mActivity.findViewById(R.id.text_position);
+//                positionText.setText(currentPosition);
 
                 if (location.getLocType() == BDLocation.TypeGpsLocation||location.getLocType()==BDLocation.TypeNetWorkLocation){
                     navigateTo(location);

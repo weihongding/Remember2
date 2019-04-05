@@ -35,7 +35,7 @@ public class MaBtnListener implements View.OnClickListener {
                 break;
             }
             case R.id.btn_set:{
-                UserSetting.UserName="undefinedUser";
+                UserSetting.setUserLoginInfo(mActivity,"undefined");
                 CheckUtil.setUserLoginState(mActivity);
                 break;
             }
@@ -76,7 +76,7 @@ public class MaBtnListener implements View.OnClickListener {
                 break;
             }
             case R.id.btn_login:{
-                UserSetting.UserName="牧威";
+                UserSetting.setUserLoginInfo(mActivity,"牧威");
                 CheckUtil.setUserLoginState(mActivity);
                 break;
             }
