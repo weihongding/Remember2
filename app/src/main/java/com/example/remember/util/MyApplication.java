@@ -1,4 +1,4 @@
-package com.example.remember.Util;
+package com.example.remember.util;
 
 import android.app.Application;
 import android.content.Context;

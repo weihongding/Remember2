@@ -1,13 +1,16 @@
-package com.example.remember.Util;
+package com.example.remember.util;
 
 import android.app.Activity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
+import com.alibaba.fastjson.JSONObject;
 import com.example.remember.R;
+import com.example.remember.ccs.Client;
 
+import java.util.HashMap;
 import java.util.Map;
 
 //检查数据
@@ -22,8 +25,14 @@ public class CheckUtil {
             tv_user.setVisibility(View.GONE);
         }else{
             btn_login.setVisibility(View.GONE);
-            Map map = UserSetting.getUserLoginInfo(activity);
-            tv_user.setText("账号："+map.get("account")+"\n密码："+map.get("password"));
+            Map valueMap = UserSetting.getUserLoginInfo(activity);
+            Map<String,String> map = new HashMap<>();
+            map.put("messageType", "login");
+            map.put("value", valueMap.toString());
+            JSONObject json = JSONObject.parseObject(JSONObject.toJSONString(map));
+            Log.d(DataUtil.TAG+"Check", json.toString());
+            Client.sendMessage(json);
+            tv_user.setText(UserSetting.user.getId()+UserSetting.user.getName());
             tv_user.setVisibility(View.VISIBLE);
         }
     }

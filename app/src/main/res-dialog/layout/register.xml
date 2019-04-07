@@ -26,7 +26,7 @@
                 android:layout_height="wrap_content" />
             <EditText
                 android:id="@+id/edit_reg_name"
-                android:textSize="18dp"
+                android:textSize="14dp"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:lines="1"/>
@@ -49,7 +49,9 @@
                 android:layout_height="wrap_content" />
             <EditText
                 android:id="@+id/edit_reg_account"
-                android:textSize="18dp"
+                android:textSize="14dp"
+                android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890"
+                android:hint="字母/数字组成"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:lines="1"/>
@@ -72,7 +74,9 @@
                 android:layout_height="wrap_content" />
             <EditText
                 android:id="@+id/edit_reg_password"
-                android:textSize="18dp"
+                android:textSize="14dp"
+                android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890"
+                android:hint="字母/数字组成"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:password="true"
@@ -96,7 +100,9 @@
                 android:layout_height="wrap_content" />
             <EditText
                 android:id="@+id/edit_reg_password2"
-                android:textSize="18dp"
+                android:textSize="14dp"
+                android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890"
+                android:hint="字母/数字组成"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:password="true"

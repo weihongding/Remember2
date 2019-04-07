@@ -6,12 +6,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.remember.R;
-import com.example.remember.Util.CheckUtil;
-import com.example.remember.Util.MyDialog;
-import com.example.remember.Util.UserSetting;
+import com.example.remember.util.CheckUtil;
+import com.example.remember.util.MyDialog;
 import com.example.remember.listener.MaBtnListener;
 
 public class MainActivity extends AppCompatActivity {

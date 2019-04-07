@@ -2,6 +2,7 @@ package com.example.remember.listener;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -9,10 +10,11 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.remember.R;
-import com.example.remember.Util.CheckUtil;
-import com.example.remember.Util.MyApplication;
-import com.example.remember.Util.MyDialog;
-import com.example.remember.Util.UserSetting;
+import com.example.remember.util.CheckUtil;
+import com.example.remember.util.DataUtil;
+import com.example.remember.util.MyApplication;
+import com.example.remember.util.MyDialog;
+import com.example.remember.util.UserSetting;
 import com.example.remember.activity.BwlActivity;
 import com.example.remember.activity.DtActivity;
 import com.example.remember.activity.JlActivity;
@@ -103,7 +105,7 @@ public class MaBtnListener implements View.OnClickListener {
                 CheckBox cb_login_save = (CheckBox)MyDialog.loginDialog.findViewById(R.id.cb_login_save);
                 UserSetting.setUserLoginInfo(mActivity, edi_account.getText().toString(), edi_password.getText().toString());
                 Map<String,String> map = UserSetting.getUserLoginInfo(mActivity);
-                Toast.makeText(mActivity,map.get("account"), Toast.LENGTH_SHORT).show();
+                //Toast.makeText(mActivity,map.get("account"), Toast.LENGTH_SHORT).show();
                 CheckUtil.setUserLoginState(mActivity);
                 if(!cb_login_save.isChecked()) {
                     UserSetting.setUserLoginInfo(mActivity, "", "");
@@ -125,8 +127,9 @@ public class MaBtnListener implements View.OnClickListener {
                 EditText edi_account = (EditText)MyDialog.regDialog.findViewById(R.id.edit_reg_account);
                 EditText edi_password = (EditText)MyDialog.regDialog.findViewById(R.id.edit_reg_password);
                 EditText edi_password2 = (EditText)MyDialog.regDialog.findViewById(R.id.edit_reg_password2);
+
                 String user = edi_name.getText().toString()+"\n"+edi_account.getText().toString()+"\n"
-                        +edi_password.getText().toString()+"\n"+edi_password2.getText().toString();
+                        +edi_password.getText().toString()+"\n"+ DataUtil.getMd5(edi_password2.getText().toString());
                 Toast.makeText(mActivity, user, Toast.LENGTH_SHORT).show();
                 edi_name.setText("");
                 edi_account.setText("");

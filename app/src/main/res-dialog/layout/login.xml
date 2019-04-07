@@ -25,7 +25,8 @@
                 android:layout_height="wrap_content" />
             <EditText
                 android:id="@+id/edit_login_account"
-                android:textSize="18dp"
+                android:textSize="14dp"
+                android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:lines="1"/>
@@ -47,7 +48,8 @@
                 android:layout_height="wrap_content" />
             <EditText
                 android:id="@+id/edit_login_password"
-                android:textSize="18dp"
+                android:textSize="14dp"
+                android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:password="true"

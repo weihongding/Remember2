@@ -1,14 +1,17 @@
-package com.example.remember.Util;
+package com.example.remember.util;
 
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
+
+import com.example.remember.entity.UserInfo;
 
 import java.util.HashMap;
 import java.util.Map;
 
 public class UserSetting {
 
+    public static UserInfo user = new UserInfo();
     private static SharedPreferences.Editor editor;
     private static SharedPreferences pref;
 

@@ -1,7 +1,6 @@
 package com.example.remember.listener;
 
 import android.app.Activity;
-import android.widget.TextView;
 
 import com.baidu.mapapi.map.BaiduMap;
 import com.baidu.mapapi.map.MapStatusUpdate;
@@ -13,7 +12,7 @@ import com.example.remember.R;
 
 import com.baidu.location.BDLocation;
 import com.baidu.location.BDLocationListener;
-import com.example.remember.Util.UserSetting;
+import com.example.remember.util.UserSetting;
 
 public class MyLocationListener implements BDLocationListener {
 
