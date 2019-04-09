@@ -26,13 +26,14 @@ public class CheckUtil {
         }else{
             btn_login.setVisibility(View.GONE);
             Map valueMap = UserSetting.getUserLoginInfo(activity);
-            Map<String,String> map = new HashMap<>();
-            map.put("messageType", "login");
-            map.put("value", valueMap.toString());
-            JSONObject json = JSONObject.parseObject(JSONObject.toJSONString(map));
-            Log.d(DataUtil.TAG+"Check", json.toString());
-            Client.sendMessage(json);
-            tv_user.setText(UserSetting.user.getId()+UserSetting.user.getName());
+//            Map<String,String> map = new HashMap<>();
+//            map.put("messageType", "login");
+//            map.put("value", valueMap.toString());
+//            JSONObject json = JSONObject.parseObject(JSONObject.toJSONString(map));
+//            Log.d(DataUtil.TAG+"Check", json.toString());
+//            Client.sendMessage(json);
+
+            tv_user.setText("账号："+valueMap.get("account")+"\n密码："+valueMap.get("password"));
             tv_user.setVisibility(View.VISIBLE);
         }
     }

@@ -1,6 +1,8 @@
 package com.example.remember.activity;
 
+import android.graphics.Color;
 import android.graphics.Typeface;
+import android.graphics.drawable.GradientDrawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -36,6 +38,10 @@ public class MainActivity extends AppCompatActivity {
         btn_share.setTypeface(font);
         btn_set.setTypeface(font);
         MaBtnListener listener = new MaBtnListener(this);
+
+        //修改颜色
+//        GradientDrawable p = (GradientDrawable) btn_dt.getBackground();
+//        p.setColor(Color.parseColor("#f0f0f0"));
 
         btn_share.setOnClickListener(listener);
         btn_set.setOnClickListener(listener);

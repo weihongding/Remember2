@@ -3,6 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <include layout="@layout/rc_week" />
+
     <TextView
         android:text="日程页面"
         android:textSize="50dp"
