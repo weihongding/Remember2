@@ -15,18 +15,18 @@ import com.example.remember.util.DateUtil;
 
 import java.util.List;
 
-public class RcWeekDayAdapter extends RecyclerView.Adapter<RcWeekDayAdapter.ViewHolder> {
+public class RcQAdapter extends RecyclerView.Adapter<RcQAdapter.ViewHolder> {
 
     private List<Rc_q> mRcqList;
 
-    public RcWeekDayAdapter(List<Rc_q> rcQList){
+    public RcQAdapter(List<Rc_q> rcQList){
         this.mRcqList = rcQList;
     }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.rc_week_day_item,parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.rc_q_item,parent,false);
         ViewHolder holder = new ViewHolder(view);
         return holder;
     }
@@ -51,7 +51,7 @@ public class RcWeekDayAdapter extends RecyclerView.Adapter<RcWeekDayAdapter.View
 
         public ViewHolder(@NonNull View view) {
             super(view);
-            rcStartTime = (TextView)view.findViewById(R.id.text_rc_week_day_item_time);
+            rcStartTime = (TextView)view.findViewById(R.id.text_rc_q_item_time);
         }
     }
 

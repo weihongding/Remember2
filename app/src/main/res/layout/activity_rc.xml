@@ -1,15 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <include layout="@layout/rc_week" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
+
+    <include layout="@layout/rc_q"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5"
+        />
+
+    <RelativeLayout
+        android:id="@+id/layout_rc_add"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_margin="10dp"
+        android:visibility="visible"
+        >
+
+        <Button
+            android:id="@+id/btn_rc_add"
+            android:text="+"
+            android:textSize="20dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/circle_25">
+        </Button>
+        <TextView
+            android:text="长按进入编辑模式"
+            android:textSize="14dp"
+            android:textColor="#A0A0A0"
+            android:gravity="center"
+            android:layout_marginTop="50dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_rc_unq"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_margin="10dp"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        >
+
+        <include layout="@layout/rc_unq"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="4"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btn_rc_history"
+                android:layout_gravity="right"
+                android:text="@string/fa_history"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@drawable/circle_25"
+                android:layout_margin="5dp"
+                />
+
+            <Button
+                android:id="@+id/btn_rc_change"
+                android:layout_gravity="right"
+                android:text="@string/fa_check"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@drawable/circle_25"
+                android:layout_margin="5dp"
+                />
+
+
+        </LinearLayout>
+
+
+
+        
+    </LinearLayout>
 
     <TextView
         android:text="日程页面"
         android:textSize="50dp"
-        android:layout_centerInParent="true"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:visibility="gone"/>
 
-</RelativeLayout>
+</LinearLayout>

@@ -5,5 +5,5 @@
     <!-- 填充的颜色 -->
     <solid android:color="#DADFF7" />
 
-    <corners android:radius="5dip" />
+    <corners android:radius="15dip" />
 </shape>

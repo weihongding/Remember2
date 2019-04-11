@@ -6,4 +6,6 @@
     <string name="fa_cog">&#xf013;</string>
     <string name="fa_share">&#xf064;</string>
     <string name="fa_mail">&#xf003;</string>
+    <string name="fa_check">&#xf00c;</string>
+    <string name="fa_history">&#xf1da;</string>
 </resources>

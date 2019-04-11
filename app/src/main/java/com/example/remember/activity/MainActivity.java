@@ -32,7 +32,6 @@ public class MainActivity extends AppCompatActivity {
         View logView = this.getLayoutInflater().inflate(R.layout.login, null);
         View regView = this.getLayoutInflater().inflate(R.layout.register, null);
 
-        TextView tv_user = (TextView)findViewById(R.id.text_user);
         Typeface font = Typeface.createFromAsset(getAssets(), "fonts/fontawesome-webfont.ttf");
 
         btn_share.setTypeface(font);

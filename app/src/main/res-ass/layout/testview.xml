@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <include layout="@layout/rc_week_day_item"
+    <include layout="@layout/rc_q_item"
         android:layout_width="100dp"
         android:layout_height="100dp" />
 

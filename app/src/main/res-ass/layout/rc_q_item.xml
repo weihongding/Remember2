@@ -4,12 +4,11 @@
     android:layout_height="wrap_content">
 
     <TextView
-        android:id="@+id/text_rc_week_day_item_time"
+        android:id="@+id/text_rc_q_item_time"
         android:textColor="#827F59"
         android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="19dp"
-        android:background="@drawable/circle_5"
-        android:shadowColor="#f0f0f0"/>
+        android:background="@drawable/circle_5"/>
 
 </LinearLayout>
